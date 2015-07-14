@@ -7,13 +7,13 @@
 - MY_IP: my_ip
 
 # volumes:
-- /opt/openstack/nova-consoleauth/: /etc/nova
-- /opt/openstack/log/nova-consoleauth/: /var/log/nova/
+- /opt/openstack/nova-scheduler/: /etc/nova
+- /opt/openstack/log/nova-scheduler/: /var/log/nova/
 
-# 启动glance
-docker run -d --name nova-consoleauth \
-    -v /opt/openstack/nova-consoleauth/:/etc/nova \
-    -v /opt/openstack/log/nova-consoleauth/:/var/log/nova/ \
+# 启动nova-scheduler
+docker run -d --name nova-scheduler \
+    -v /opt/openstack/nova-scheduler/:/etc/nova \
+    -v /opt/openstack/log/nova-scheduler/:/var/log/nova/ \
     -e NOVA_DB=10.64.0.52 \
     -e NOVA_DBPASS=nova_dbpass \
     -e RABBIT_HOST=10.64.0.52 \
