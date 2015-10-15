@@ -53,6 +53,8 @@ if [ ! -f /etc/nova/.complete ];then
     $CRUDINI --set /etc/nova/nova.conf DEFAULT scheduler_available_filters nova.scheduler.filters.all_filters
     $CRUDINI --set /etc/nova/nova.conf DEFAULT scheduler_default_filters AggregateInstanceExtraSpecsFilter,RetryFilter,AvailabilityZoneFilter,RamFilter,ComputeFilter,ComputeCapabilitiesFilter,ImagePropertiesFilter,ServerGroupAntiAffinityFilter,ServerGroupAffinityFilter
 
+    $CRUDINI --set /etc/nova/nova.conf DEFAULT ram_allocation_ratio 1.0
+
     touch /etc/nova/.complete
 fi
 
