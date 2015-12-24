@@ -8,7 +8,7 @@ ENV OPENSTACK_VERSION liberty
 ENV BUILD_VERSION 2015-12-24
 
 RUN yum update -y
-RUN yum install -y openstack-nova-console
+RUN yum install -y openstack-nova-scheduler
 RUN yum clean all
 RUN rm -rf /var/cache/yum/*
 
